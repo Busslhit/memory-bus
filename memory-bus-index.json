@@ -1,0 +1,36 @@
+{
+  "id": "memory-bus",
+  "name": "Memory Bus System",
+  "version": "1.0.0",
+  "description": "TaskFlow-based memory bus system with pages and operations",
+  "versioned": false,
+  "keywords": ["memory", "bus", "taskflow", "pages", "operations", "workflow"],
+  "categories": ["workflow", "memory", "automation"],
+  "tags": ["memory-bus", "pages", "taskflow"],
+  "metadata": {
+    "type": "workflow",
+    "parent": null,
+    "child_count": 0,
+    "level": 1
+  },
+  "commands": [
+    "memory-bus create [name] [category]",
+    "memory-bus execute [operation-id]",
+    "memory-bus query [operation-id] --category",
+    "memory-bus list",
+    "memory-bus run task"
+  ],
+  "examples": [
+    "memory-bus create my-note important",
+    "memory-bus execute create:abc12345678901234567890123456789012345 write --category work",
+    "memory-bus query create:abc12345678901234567890123456789012345 --category work"
+  ],
+  "related": [
+    "taskflow",
+    "taskflow-inbox-triage",
+    "memory_buses"
+  ],
+  "author": "Quintus",
+  "lastUpdated": "2026-04-23T08:00:00Z",
+  "authorId": "agent:main:subagent:memory-bus"
+}

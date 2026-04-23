@@ -1,0 +1,28 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "operation": {
+        "type": "object",
+        "properties": {
+          "operation_id": {
+            "type": "string",
+            "pattern": "^read:[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+          },
+          "action": {
+            "type": "string",
+            "enum": ["read", "write", "delete", "query", "execute", "batch"]
+          },
+          "params": {
+            "type": "object"
+          },
+          "target_pages": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"}
+          }
+        },
+        "required": ["operation_id", "action", "params"]
+      }
+    }
+  }
+}

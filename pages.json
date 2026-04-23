@@ -1,0 +1,40 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "page": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "type": "string",
+            "enum": ["personal", "work", "ideas", "projects", "learned", "health", "other"]
+          },
+          "timestamp": {
+            "type": "number",
+            "format": "timestamp-datetime"
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "tags": {
+                "type": "array",
+                "items": {"type": "string"}
+              },
+              "source": {"type": "string"},
+              "created_by": {"type": "string"}
+            }
+          }
+        },
+        "required": ["id", "name", "category", "timestamp"]
+      }
+    }
+  }
+}

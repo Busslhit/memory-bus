@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+/**
+ * Memory Bus CLI
+ * Simple command-line interface for the memory bus system
+ */
+
+require('./cli.js');
